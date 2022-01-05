@@ -1,0 +1,9 @@
+1.Makefile/
+	libft.hが更新されてもremakeしない
+
+2.bonus/ft_lstclear.c, bonus/ft_lstdelone.c
+	最初のエラー処理のせいでdel == NULL　のとノードをfree()しない
+
+3.part1/
+	全体的に(char)で処理するかか(unsigned char)で処理するかがmanと異なる部分がある
+
