@@ -40,7 +40,35 @@ b.o : $(addprefix $(PATH_bonus),$(SRC_bonus))
 	$(CC) $(CFALG) -c $^
 	rm -f $(PATH_bonus)$(HEADER)
 
-test_0 : all clean
+#test_0 : all clean
+#	cp -f $(PATH_header)$(HEADER) ./
+#	cp -f $(TESTER_0) ./test.c
+#	$(CC) $(CFALG) test.c $(NAME)
+#	rm -f $(HEADER)
+#	rm -f $(NAME)
+#	mkdir $(TEST_CASE_0)
+#	mv -f a.out $(TEST_CASE_0)/
+#	rm -rf $(HOME)$(TEST_CASE_0)
+#	mv -f $(TEST_CASE_0) $(HOME)
+#	rm -f test.c
+#
+#test_1 : file
+#	mkdir $(TEST_CASE_1)
+#	cp -rf $(SUBMIT_NAME) $(TEST_CASE_1)/
+#	cp -rf $(TESTER_1) $(TEST_CASE_1)/
+#	rm -rf $(HOME)$(TEST_CASE_1)
+#	mv $(TEST_CASE_1) $(HOME)
+#
+#test_2 : file
+#	cp -rf $(SUBMIT_NAME) $(TEST_CASE_2)
+#	cp -rf $(TESTER_2) $(TEST_CASE_2)/
+#	rm -rf $(HOME)$(TEST_CASE_2)
+#	mv $(TEST_CASE_2) $(HOME)
+#
+#test : test_1 test_2 test_0
+#	rm -rf $(SUBMIT_NAME)
+
+test : all clean
 	cp -f $(PATH_header)$(HEADER) ./
 	cp -f $(TESTER_0) ./test.c
 	$(CC) $(CFALG) test.c $(NAME)
@@ -50,22 +78,7 @@ test_0 : all clean
 	mv -f a.out $(TEST_CASE_0)/
 	rm -rf $(HOME)$(TEST_CASE_0)
 	mv -f $(TEST_CASE_0) $(HOME)
-
-test_1 : file
-	mkdir $(TEST_CASE_1)
-	cp -rf $(SUBMIT_NAME) $(TEST_CASE_1)/
-	cp -rf $(TESTER_1) $(TEST_CASE_1)/
-	rm -rf $(HOME)$(TEST_CASE_1)
-	mv $(TEST_CASE_1) $(HOME)
-
-test_2 : file
-	cp -rf $(SUBMIT_NAME) $(TEST_CASE_2)
-	cp -rf $(TESTER_2) $(TEST_CASE_2)/
-	rm -rf $(HOME)$(TEST_CASE_2)
-	mv $(TEST_CASE_2) $(HOME)
-
-test : test_1 test_2 test_0
-	rm -rf $(SUBMIT_NAME)
+	rm -f test.c
 
 file : $(PATH_part1)* $(PATH_part2)* $(PATH_bonus)* $(PATH_header)*
 	rm -rf $(SUBMIT_NAME)

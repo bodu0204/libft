@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <ctype.h>
 int randum_int (void);
 char randum_char (int);
 char *number_str();
@@ -16,86 +17,30 @@ void show256(char*);
 int comploc(char*, char*);
 
 #include "libft.h"
-/*
-1.ft_isalpha()
-2.ft_isdigit()
-3.ft_isalnum()
-4.ft_isascii()
-5.ft_isprint()
 
-
-#include <ctype.h>
-
-int main(void)
-{
-    int c;
-    int oi_return;
-    int fti_return;
-    while (1)
-    {
-        c = randum_int();
-        //1.isalpha()
-        oi_return = isalpha(c);
-        fti_return = ft_isalpha(c);
-        if (oi_return != fti_return)
-        {
-            printf("\n\n1.isalpha error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", c, c, oi_return, fti_return);
-            exit (0);
-        }
-        //2.isdigit()
-        oi_return = isdigit(c);
-        fti_return = ft_isdigit(c);
-        if (oi_return != fti_return)
-        {
-            printf("\n\n2.isdigit error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", c, c, oi_return, fti_return);
-            exit (0);
-        }
-        //3.isalnum()
-        oi_return = isalnum(c);
-        fti_return = ft_isalnum(c);
-        if (oi_return != fti_return)
-        {
-            printf("\n\n3.isalnum error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", c, c, oi_return, fti_return);
-            exit (0);
-        }
-        //4.isascii()
-        oi_return = isascii(c);
-        fti_return = ft_isascii(c);
-        if (oi_return != fti_return)
-        {
-            printf("\n\n4.isascii error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", c, c, oi_return, fti_return);
-            exit (0);
-        }
-        //5.isprint()
-        oi_return = isprint(c);
-        fti_return = ft_isprint(c);
-        if (oi_return != fti_return)
-        {
-            printf("\n\n5.isprint error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", c, c, oi_return, fti_return);
-            exit (0);
-        }
-        printf("c = %d(OK)\n",c);
-    }
-}
-*/
 
 /*
-1.strlen()
-2.memset()
-3.bzero()
-4.memcpy()
-5.memmove()
-6.strlcpy()
-7.strlcat()
-8.toupper()
-9.tolower()
-10.strchr()
-11.strchr()
-12.strncmp()
-13.memchr()
-14.strnstr()
-15.atoi()
-16.memcmp()
+1.isalpha()
+2.isdigit()
+3.isalnum()
+4.isascii()
+5.isprint()
+6.strlen()
+7.memset()
+8.bzero()
+9.memcpy()
+10.memmove()
+11.strlcpy()
+12.strlcat()
+13.toupper()
+14.tolower()
+15.strchr()
+16.strchr()
+17.strncmp()
+18.memchr()
+19.strnstr()
+20.atoi()
+21.memcmp()
 */
 #include<ctype.h>
 
@@ -153,15 +98,68 @@ int main(int argc, char *argv[])
         r = randum_int();
         //printf("sa =  %s , sb =  %s , ns = %s , l = %d, r = %d\n", sa, sb, ns, l, r);
 
+        //1.isalpha()
+
+        oi_return = isalpha(r);
+        fti_return = ft_isalpha(r);
+        if (oi_return != fti_return)
+        {
+            printf("\n\n1.isalpha error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
+            exit (0);
+        }
 
 
-        //1.strlen()
+        //2.isdigit()
+
+        oi_return = isdigit(r);
+        fti_return = ft_isdigit(r);
+        if (oi_return != fti_return)
+        {
+            printf("\n\n2.isdigit error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
+            exit (0);
+        }
+
+
+        //3.isalnum()
+
+        oi_return = isalnum(r);
+        fti_return = ft_isalnum(r);
+        if (oi_return != fti_return)
+        {
+            printf("\n\n3.isalnum error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
+            exit (0);
+        }
+
+
+        //4.isascii()
+
+        oi_return = isascii(r);
+        fti_return = ft_isascii(r);
+        if (oi_return != fti_return)
+        {
+            printf("\n\n4.isascii error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
+            exit (0);
+        }
+
+
+        //5.isprint()
+
+        oi_return = isprint(r);
+        fti_return = ft_isprint(r);
+        if (oi_return != fti_return)
+        {
+            printf("\n\n5.isprint error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
+            exit (0);
+        }
+
+
+        //6.strlen()
 
         os_return = strlen(sa);
         fts_return = ft_strlen(sa);
         if (os_return != fts_return)
         {
-            printf("\n\n1.strlen error\n1 = %s\no_return = %zu\nft_return = %zu\n", sa, os_return, fts_return);
+            printf("\n\n6.strlen error\n1 = %s\no_return = %zu\nft_return = %zu\n", sa, os_return, fts_return);
             printf("sa\n");
             show(sa);
             printf("\n\n");
@@ -171,7 +169,7 @@ int main(int argc, char *argv[])
 
 
 
-        //2.memset()
+        //7.memset()
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -179,7 +177,7 @@ int main(int argc, char *argv[])
         ftp_return = ft_memset(taf, r, pl);
         if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
-            printf("\n\n2.memset error\n\nbefor\n1 = %s(%p)\n2 = %d\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, r, pl, tao, taf, op_return, ftp_return);
+            printf("\n\n7.memset error\n\nbefor\n1 = %s(%p)\n2 = %d\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, r, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("\n\n");
@@ -189,7 +187,7 @@ int main(int argc, char *argv[])
 
 
 
-        //3.bzero()
+        //8.bzero()
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -197,7 +195,7 @@ int main(int argc, char *argv[])
         ft_bzero(taf, pl);
         if (allcmp(tao, taf, 512))
         {
-            printf("\n\n3.bzero error\n\nbefor\n1 = %s(%p)\n2 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nno return\n", sa, sa, pl, tao, taf);
+            printf("\n\n8.bzero error\n\nbefor\n1 = %s(%p)\n2 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nno return\n", sa, sa, pl, tao, taf);
             printf("sa\n");
             show(sa);
             printf("tao\n");
@@ -211,7 +209,7 @@ int main(int argc, char *argv[])
 
 
 
-        //4.memcpy()
+        //9.memcpy()
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -219,7 +217,7 @@ int main(int argc, char *argv[])
         ftp_return = ft_memcpy(taf, sb, pl);
         if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
-            printf("\n\n4.memcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
+            printf("\n\n9.memcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -235,7 +233,7 @@ int main(int argc, char *argv[])
 
 
 
-        //5.memmove()
+        //10.memmove()
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -243,7 +241,7 @@ int main(int argc, char *argv[])
         ftp_return = ft_memmove(taf, sb, pl);
         if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
-            printf("\n\n5.memmove error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
+            printf("\n\n10.memmove error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -259,7 +257,7 @@ int main(int argc, char *argv[])
 
 
 
-        //6.strlcpy
+        //11.strlcpy
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -267,7 +265,7 @@ int main(int argc, char *argv[])
         fts_return = ft_strlcpy(taf, sb, pl);
         if (allcmp(tao, taf, 512) ||os_return != fts_return)
         {
-            printf("\n\n6.strlcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
+            printf("\n\n11.strlcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -283,7 +281,7 @@ int main(int argc, char *argv[])
 
 
 
-        //7.strlcat
+        //12.strlcat
 
         allcpy(tao, sa, 512);
         allcpy(taf, sa, 512);
@@ -291,7 +289,7 @@ int main(int argc, char *argv[])
         fts_return = ft_strlcat(taf, sb, pl);
         if (allcmp(tao, taf, 512) ||os_return != fts_return)
         {
-            printf("\n\n7.strlcat error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
+            printf("\n\n12.strlcat error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -307,13 +305,13 @@ int main(int argc, char *argv[])
 
 
 
-        //8.toupper
+        //13.toupper
 
         oi_return = toupper(r);
         fti_return = ft_toupper(r);
         if (oi_return != fti_return)
         {
-            printf("\n\n8.toupper error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
+            printf("\n\n13.toupper error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
             exit (0);
@@ -321,13 +319,13 @@ int main(int argc, char *argv[])
 
 
 
-        //9.tolower
+        //14.tolower
 
         oi_return = tolower(r);
         fti_return = ft_tolower(r);
         if (oi_return != fti_return)
         {
-            printf("\n\n9.tolower error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
+            printf("\n\n14.tolower error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
             exit (0);
@@ -335,13 +333,13 @@ int main(int argc, char *argv[])
 
 
 
-        //10.strchr
+        //15.strchr
 
         op_return = strchr(sa, r);
         ftp_return = ft_strchr(sa, r);
         if (op_return != ftp_return)
         {
-            printf("\n\n10.strchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
+            printf("\n\n15.strchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("\n\n");
@@ -351,13 +349,13 @@ int main(int argc, char *argv[])
 
 
 
-        //11.strchr
+        //16.strchr
 
         op_return = strrchr(sa, r);
         ftp_return = ft_strrchr(sa, r);
         if (op_return != ftp_return)
         {
-            printf("\n\n11.strrchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
+            printf("\n\n16.strrchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("\n\n");
@@ -367,13 +365,13 @@ int main(int argc, char *argv[])
 
 
 
-        //12.strncmp
+        //17.strncmp
 
         oi_return = strncmp(sa, sb, pl);
         fti_return = ft_strncmp(sa, sb, pl);
         if (oi_return != fti_return)
         {
-            printf("\n\n12.strncmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
+            printf("\n\n17.strncmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -385,13 +383,13 @@ int main(int argc, char *argv[])
 
 
 
-        //13.memchr
+        //18.memchr
 
         op_return = memchr(sa, r, pl);
         ftp_return = ft_memchr(sa, r, pl);
         if (op_return != ftp_return)
         {
-            printf("\n\n13.memchr error\n1 = %s(%p)\n2 = %d\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, r, pl, op_return, ftp_return);
+            printf("\n\n18.memchr error\n1 = %s(%p)\n2 = %d\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, r, pl, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("\n\n");
@@ -401,13 +399,13 @@ int main(int argc, char *argv[])
 
 
 
-        //14.strnstr
+        //19.strnstr
 
         op_return = strnstr(sa, sb, pl);
         ftp_return = ft_strnstr(sa, sb, pl);
         if (op_return != ftp_return)
         {
-            printf("\n\n14.strnstr error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, sb, sb, pl, op_return, ftp_return);
+            printf("\n\n19.strnstr error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, sb, sb, pl, op_return, ftp_return);
             printf("sa\n");
             show(sa);
             printf("sb\n");
@@ -418,13 +416,13 @@ int main(int argc, char *argv[])
 
 
 
-        //15.atoi
+        //20.atoi
 
         oi_return = atoi(ns);
         fti_return = ft_atoi(ns);
         if (oi_return != fti_return)
         {
-            printf("\n\n15.atoi error\n1 = %s(%p)\no_return = %d\nft_return = %d\n", ns, ns, oi_return, fti_return);
+            printf("\n\n20.atoi error\n1 = %s(%p)\no_return = %d\nft_return = %d\n", ns, ns, oi_return, fti_return);
             printf("ns\n");
             show(ns);
             printf("%ld times\n", i);
@@ -432,12 +430,12 @@ int main(int argc, char *argv[])
         }
 
 
-        //16.memcmp()
+        //21.memcmp()
         oi_return = memcmp(sa, sb, pl);
         fti_return = ft_memcmp(sa, sb, pl);
         if (oi_return != fti_return)
         {
-            printf("\n\n16.memcmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
+            printf("\n\n21.memcmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
             printf("sa\n");
             show256(sa);
             printf("sb\n");
