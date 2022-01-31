@@ -10,11 +10,12 @@ PATH_part2	= part2/
 PATH_bonus	= bonus/
 CC			= gcc
 CFALG		= -Wall -Wextra -Werror
-TESTER_0	= tester/test.c
+TESTER		= tester/
+TESTER_0	= test.c
 TEST_CASE_0	= libft_test_case_0
-TESTER_1	= tester/libft-unit-test-master
+TESTER_1	= libft-unit-test
 TEST_CASE_1	= libft_test_case_1
-TESTER_2	= tester/libftTester
+TESTER_2	= libftTester
 TEST_CASE_2	= libft_test_case_2
 SUBMIT_NAME	= libft
 HOME		= ../
@@ -40,37 +41,9 @@ b.o : $(addprefix $(PATH_bonus),$(SRC_bonus))
 	$(CC) $(CFALG) -c $^
 	rm -f $(PATH_bonus)$(HEADER)
 
-#test_0 : all clean
-#	cp -f $(PATH_header)$(HEADER) ./
-#	cp -f $(TESTER_0) ./test.c
-#	$(CC) $(CFALG) test.c $(NAME)
-#	rm -f $(HEADER)
-#	rm -f $(NAME)
-#	mkdir $(TEST_CASE_0)
-#	mv -f a.out $(TEST_CASE_0)/
-#	rm -rf $(HOME)$(TEST_CASE_0)
-#	mv -f $(TEST_CASE_0) $(HOME)
-#	rm -f test.c
-#
-#test_1 : file
-#	mkdir $(TEST_CASE_1)
-#	cp -rf $(SUBMIT_NAME) $(TEST_CASE_1)/
-#	cp -rf $(TESTER_1) $(TEST_CASE_1)/
-#	rm -rf $(HOME)$(TEST_CASE_1)
-#	mv $(TEST_CASE_1) $(HOME)
-#
-#test_2 : file
-#	cp -rf $(SUBMIT_NAME) $(TEST_CASE_2)
-#	cp -rf $(TESTER_2) $(TEST_CASE_2)/
-#	rm -rf $(HOME)$(TEST_CASE_2)
-#	mv $(TEST_CASE_2) $(HOME)
-#
-#test : test_1 test_2 test_0
-#	rm -rf $(SUBMIT_NAME)
-
-test : all clean
+test_0 : all clean
 	cp -f $(PATH_header)$(HEADER) ./
-	cp -f $(TESTER_0) ./test.c
+	cp -f $(TESTER)$(TESTER_0) ./test.c
 	$(CC) $(CFALG) test.c $(NAME)
 	rm -f $(HEADER)
 	rm -f $(NAME)
@@ -79,6 +52,32 @@ test : all clean
 	rm -rf $(HOME)$(TEST_CASE_0)
 	mv -f $(TEST_CASE_0) $(HOME)
 	rm -f test.c
+
+rmtester :
+	rm -rf $(TESTER)$(TESTER_1)
+	rm -rf $(TESTER)$(TESTER_2)
+
+gentester : rmtester
+	git clone https://github.com/alelievr/libft-unit-test.git $(TESTER_1)
+	mv $(TESTER_1) $(TESTER)
+	git clone https://github.com/Tripouille/libftTester.git $(TESTER_2)
+	mv $(TESTER_2) $(TESTER)
+
+test_1 : file gentester
+	mkdir $(TEST_CASE_1)
+	cp -rf $(SUBMIT_NAME) $(TEST_CASE_1)/
+	cp -rf $(TESTER)$(TESTER_1) $(TEST_CASE_1)/
+	rm -rf $(HOME)$(TEST_CASE_1)
+	mv $(TEST_CASE_1) $(HOME)
+
+test_2 : file gentester
+	cp -rf $(SUBMIT_NAME) $(TEST_CASE_2)
+	cp -rf $(TESTER)$(TESTER_2) $(TEST_CASE_2)/
+	rm -rf $(HOME)$(TEST_CASE_2)
+	mv $(TEST_CASE_2) $(HOME)
+
+test : test_1 test_2 test_0
+	rm -rf $(SUBMIT_NAME)
 
 file : $(PATH_part1)* $(PATH_part2)* $(PATH_bonus)* $(PATH_header)*
 	rm -rf $(SUBMIT_NAME)
