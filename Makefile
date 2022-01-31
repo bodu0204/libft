@@ -97,7 +97,7 @@ fclean : clean
 	rm -f $(HEADER)
 	rm -rf $(SUBMIT_NAME)
 
-allclean : fclean
+allclean : fclean rmtester
 	rm -rf $(HOME)$(SUBMIT_NAME)
 	rm -rf $(HOME)$(TEST_CASE_0)
 	rm -rf $(HOME)$(TEST_CASE_1)
