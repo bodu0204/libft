@@ -412,6 +412,7 @@ int main(int argc, char *argv[])
             show(sb);
             printf("\n\n");
             printf("%ld times\n", i);
+            exit (0);
         }
 
 
