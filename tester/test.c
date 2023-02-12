@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <ctype.h>
+#include <unistd.h>
 int randum_int (void);
 char randum_char (int);
 char *number_str();
@@ -35,7 +36,7 @@ int comploc(char*, char*);
 13.toupper()
 14.tolower()
 15.strchr()
-16.strchr()
+16.strrchr()
 17.strncmp()
 18.memchr()
 19.strnstr()
@@ -55,7 +56,6 @@ int main(int argc, char *argv[])
     char *sb;
     char *ns;
     int l;
-    int l2;
     int pl;
     int r;
     char tao[512];
@@ -68,6 +68,7 @@ int main(int argc, char *argv[])
     int fti_return;
     char oc_return;
     char ftc_return;
+    char rd_buf;
 
     {
     (void)j;
@@ -83,6 +84,7 @@ int main(int argc, char *argv[])
     (void)oc_return;
     (void)ftc_return;
     (void)ns;
+    (void)rd_buf;
     }
 
     while(1)
@@ -91,7 +93,6 @@ int main(int argc, char *argv[])
         sb = order_char(2);
         ns = number_str();
         l = (int) *(char*)(order_char(3));
-        l2 = (int) *((char*)(order_char(3)) + 1);
         pl = l;
         if(l < 0)
             pl *= -1;
@@ -105,7 +106,7 @@ int main(int argc, char *argv[])
         if (oi_return != fti_return)
         {
             printf("\n\n1.isalpha error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -116,7 +117,7 @@ int main(int argc, char *argv[])
         if (oi_return != fti_return)
         {
             printf("\n\n2.isdigit error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -127,7 +128,7 @@ int main(int argc, char *argv[])
         if (oi_return != fti_return)
         {
             printf("\n\n3.isalnum error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -138,7 +139,7 @@ int main(int argc, char *argv[])
         if (oi_return != fti_return)
         {
             printf("\n\n4.isascii error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -149,7 +150,7 @@ int main(int argc, char *argv[])
         if (oi_return != fti_return)
         {
             printf("\n\n5.isprint error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -164,7 +165,7 @@ int main(int argc, char *argv[])
             show(sa);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -182,7 +183,7 @@ int main(int argc, char *argv[])
             show(sa);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -204,7 +205,7 @@ int main(int argc, char *argv[])
             show(taf);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -228,7 +229,7 @@ int main(int argc, char *argv[])
             show(taf);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -252,7 +253,7 @@ int main(int argc, char *argv[])
             show(taf);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -276,7 +277,7 @@ int main(int argc, char *argv[])
             show(taf);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -300,7 +301,7 @@ int main(int argc, char *argv[])
             show(taf);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -314,7 +315,7 @@ int main(int argc, char *argv[])
             printf("\n\n13.toupper error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -328,7 +329,7 @@ int main(int argc, char *argv[])
             printf("\n\n14.tolower error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -344,12 +345,12 @@ int main(int argc, char *argv[])
             show(sa);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
 
-        //16.strchr
+        //16.strrchr
 
         op_return = strrchr(sa, r);
         ftp_return = ft_strrchr(sa, r);
@@ -360,7 +361,7 @@ int main(int argc, char *argv[])
             show(sa);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -378,7 +379,7 @@ int main(int argc, char *argv[])
             show(sb);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -394,7 +395,7 @@ int main(int argc, char *argv[])
             show(sa);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -412,7 +413,7 @@ int main(int argc, char *argv[])
             show(sb);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -427,7 +428,7 @@ int main(int argc, char *argv[])
             printf("ns\n");
             show(ns);
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -443,7 +444,7 @@ int main(int argc, char *argv[])
             show256(sb);
             printf("\n\n");
             printf("%ld times\n", i);
-            exit (0);
+            read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
         }
 
 
@@ -872,11 +873,9 @@ void show256(char* s)
 {
     size_t i;
     size_t ii;
-    size_t m;
     size_t line;
 
     line = 32;
-    m = 0;
     ii = 0;
     printf("\nstart:%p\n", s);
     while (ii < 256)
