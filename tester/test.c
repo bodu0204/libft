@@ -69,6 +69,27 @@ int main(int argc, char *argv[])
     char oc_return;
     char ftc_return;
     char rd_buf;
+    int flag_1 = 1;
+    int flag_2 = 1;
+    int flag_3 = 1;
+    int flag_4 = 1;
+    int flag_5 = 1;
+    int flag_6 = 1;
+    int flag_7 = 1;
+    int flag_8 = 1;
+    int flag_9 = 1;
+    int flag_10 = 1;
+    int flag_11 = 1;
+    int flag_12 = 1;
+    int flag_13 = 1;
+    int flag_14 = 1;
+    int flag_15 = 1;
+    int flag_16 = 1;
+    int flag_17 = 1;
+    int flag_18 = 1;
+    int flag_19 = 1;
+    int flag_20 = 1;
+    int flag_21 = 1;    
 
     {
     (void)j;
@@ -85,6 +106,27 @@ int main(int argc, char *argv[])
     (void)ftc_return;
     (void)ns;
     (void)rd_buf;
+    (void)flag_1;
+    (void)flag_2;
+    (void)flag_3;
+    (void)flag_4;
+    (void)flag_5;
+    (void)flag_6;
+    (void)flag_7;
+    (void)flag_8;
+    (void)flag_9;
+    (void)flag_10;
+    (void)flag_11;
+    (void)flag_12;
+    (void)flag_13;
+    (void)flag_14;
+    (void)flag_15;
+    (void)flag_16;
+    (void)flag_17;
+    (void)flag_18;
+    (void)flag_19;
+    (void)flag_20;
+    (void)flag_21;
     }
 
     while(1)
@@ -103,10 +145,11 @@ int main(int argc, char *argv[])
 
         oi_return = isalpha(r);
         fti_return = ft_isalpha(r);
-        if (oi_return != fti_return)
+        if (flag_1 && oi_return != fti_return)
         {
             printf("\n\n1.isalpha error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_1 = 0;
         }
 
 
@@ -114,10 +157,11 @@ int main(int argc, char *argv[])
 
         oi_return = isdigit(r);
         fti_return = ft_isdigit(r);
-        if (oi_return != fti_return)
+        if (flag_2 && oi_return != fti_return)
         {
             printf("\n\n2.isdigit error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_2 = 0;
         }
 
 
@@ -125,10 +169,11 @@ int main(int argc, char *argv[])
 
         oi_return = isalnum(r);
         fti_return = ft_isalnum(r);
-        if (oi_return != fti_return)
+        if (flag_3 && oi_return != fti_return)
         {
             printf("\n\n3.isalnum error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_3 = 0;
         }
 
 
@@ -136,10 +181,11 @@ int main(int argc, char *argv[])
 
         oi_return = isascii(r);
         fti_return = ft_isascii(r);
-        if (oi_return != fti_return)
+        if (flag_4 && oi_return != fti_return)
         {
             printf("\n\n4.isascii error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_4 = 0;
         }
 
 
@@ -147,10 +193,11 @@ int main(int argc, char *argv[])
 
         oi_return = isprint(r);
         fti_return = ft_isprint(r);
-        if (oi_return != fti_return)
+        if (flag_5 && oi_return != fti_return)
         {
             printf("\n\n5.isprint error\nc = %c(\\%d)\no_return = %d\nft_return = %d\n", r, r, oi_return, fti_return);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_5 = 0;
         }
 
 
@@ -158,7 +205,7 @@ int main(int argc, char *argv[])
 
         os_return = strlen(sa);
         fts_return = ft_strlen(sa);
-        if (os_return != fts_return)
+        if (flag_6 && os_return != fts_return)
         {
             printf("\n\n6.strlen error\n1 = %s\no_return = %zu\nft_return = %zu\n", sa, os_return, fts_return);
             printf("sa\n");
@@ -166,6 +213,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_6 = 0;
         }
 
 
@@ -176,7 +224,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memset(tao, r, pl);
         ftp_return = ft_memset(taf, r, pl);
-        if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_7 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
             printf("\n\n7.memset error\n\nbefor\n1 = %s(%p)\n2 = %d\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, r, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -184,6 +232,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_7 = 0;
         }
 
 
@@ -194,7 +243,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         bzero(tao, pl);
         ft_bzero(taf, pl);
-        if (allcmp(tao, taf, 512))
+        if (flag_8 && allcmp(tao, taf, 512))
         {
             printf("\n\n8.bzero error\n\nbefor\n1 = %s(%p)\n2 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nno return\n", sa, sa, pl, tao, taf);
             printf("sa\n");
@@ -206,6 +255,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_8 = 0;
         }
 
 
@@ -216,7 +266,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memcpy(tao, sb, pl);
         ftp_return = ft_memcpy(taf, sb, pl);
-        if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_9 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
             printf("\n\n9.memcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -230,6 +280,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_9 = 0;
         }
 
 
@@ -240,7 +291,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memmove(tao, sb, pl);
         ftp_return = ft_memmove(taf, sb, pl);
-        if (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_10 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
         {
             printf("\n\n10.memmove error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -254,6 +305,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_10 = 0;
         }
 
 
@@ -264,7 +316,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         os_return = strlcpy(tao, sb, pl);
         fts_return = ft_strlcpy(taf, sb, pl);
-        if (allcmp(tao, taf, 512) ||os_return != fts_return)
+        if (flag_11 && allcmp(tao, taf, 512) ||os_return != fts_return)
         {
             printf("\n\n11.strlcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
@@ -278,6 +330,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_11 = 0;
         }
 
 
@@ -288,7 +341,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         os_return = strlcat(tao, sb, pl);
         fts_return = ft_strlcat(taf, sb, pl);
-        if (allcmp(tao, taf, 512) ||os_return != fts_return)
+        if (flag_12 && allcmp(tao, taf, 512) ||os_return != fts_return)
         {
             printf("\n\n12.strlcat error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
@@ -302,6 +355,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_12 = 0;
         }
 
 
@@ -310,12 +364,13 @@ int main(int argc, char *argv[])
 
         oi_return = toupper(r);
         fti_return = ft_toupper(r);
-        if (oi_return != fti_return)
+        if (flag_13 && oi_return != fti_return)
         {
             printf("\n\n13.toupper error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_13 = 0;
         }
 
 
@@ -324,12 +379,13 @@ int main(int argc, char *argv[])
 
         oi_return = tolower(r);
         fti_return = ft_tolower(r);
-        if (oi_return != fti_return)
+        if (flag_14 && oi_return != fti_return)
         {
             printf("\n\n14.tolower error\n1 = %c(\\%d)\no_return =%c (%d)\nft_return =%c (%d)\n", l, l, oi_return, oi_return, fti_return, fti_return);
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_14 = 0;
         }
 
 
@@ -338,7 +394,7 @@ int main(int argc, char *argv[])
 
         op_return = strchr(sa, r);
         ftp_return = ft_strchr(sa, r);
-        if (op_return != ftp_return)
+        if (flag_15 && op_return != ftp_return)
         {
             printf("\n\n15.strchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
             printf("sa\n");
@@ -346,6 +402,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_15 = 0;
         }
 
 
@@ -354,7 +411,7 @@ int main(int argc, char *argv[])
 
         op_return = strrchr(sa, r);
         ftp_return = ft_strrchr(sa, r);
-        if (op_return != ftp_return)
+        if (flag_16 && op_return != ftp_return)
         {
             printf("\n\n16.strrchr error\n1 = %s(%p)\n2 = %c(\\%d)\nop_return =%p\nftp_return =%p\n", sa, sa, r, r, op_return, ftp_return);
             printf("sa\n");
@@ -362,6 +419,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_16 = 0;
         }
 
 
@@ -370,7 +428,7 @@ int main(int argc, char *argv[])
 
         oi_return = strncmp(sa, sb, pl);
         fti_return = ft_strncmp(sa, sb, pl);
-        if (oi_return != fti_return)
+        if (flag_17 && oi_return != fti_return)
         {
             printf("\n\n17.strncmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
             printf("sa\n");
@@ -380,6 +438,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_17 = 0;
         }
 
 
@@ -388,7 +447,7 @@ int main(int argc, char *argv[])
 
         op_return = memchr(sa, r, pl);
         ftp_return = ft_memchr(sa, r, pl);
-        if (op_return != ftp_return)
+        if (flag_18 && op_return != ftp_return)
         {
             printf("\n\n18.memchr error\n1 = %s(%p)\n2 = %d\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, r, pl, op_return, ftp_return);
             printf("sa\n");
@@ -396,6 +455,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_18 = 0;
         }
 
 
@@ -404,7 +464,7 @@ int main(int argc, char *argv[])
 
         op_return = strnstr(sa, sb, pl);
         ftp_return = ft_strnstr(sa, sb, pl);
-        if (op_return != ftp_return)
+        if (flag_19 && op_return != ftp_return)
         {
             printf("\n\n19.strnstr error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %p\nft_return = %p\n", sa, sa, sb, sb, pl, op_return, ftp_return);
             printf("sa\n");
@@ -414,6 +474,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_19 = 0;
         }
 
 
@@ -422,20 +483,21 @@ int main(int argc, char *argv[])
 
         oi_return = atoi(ns);
         fti_return = ft_atoi(ns);
-        if (oi_return != fti_return)
+        if (flag_20 && oi_return != fti_return)
         {
             printf("\n\n20.atoi error\n1 = %s(%p)\no_return = %d\nft_return = %d\n", ns, ns, oi_return, fti_return);
             printf("ns\n");
             show(ns);
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_20 = 0;
         }
 
 
         //21.memcmp()
         oi_return = memcmp(sa, sb, pl);
         fti_return = ft_memcmp(sa, sb, pl);
-        if (oi_return != fti_return)
+        if (flag_21 && oi_return != fti_return)
         {
             printf("\n\n21.memcmp error\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\no_return = %d\nft_return = %d\n", sa, sa, sb, sb, pl, oi_return, fti_return);
             printf("sa\n");
@@ -445,6 +507,7 @@ int main(int argc, char *argv[])
             printf("\n\n");
             printf("%ld times\n", i);
             read(STDIN_FILENO, &rd_buf, sizeof(rd_buf));
+            flag_21 = 0;
         }
 
 
