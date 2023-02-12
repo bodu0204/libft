@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memset(tao, r, pl);
         ftp_return = ft_memset(taf, r, pl);
-        if (flag_7 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_7 && (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return))
         {
             printf("\n\n7.memset error\n\nbefor\n1 = %s(%p)\n2 = %d\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, r, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -266,7 +266,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memcpy(tao, sb, pl);
         ftp_return = ft_memcpy(taf, sb, pl);
-        if (flag_9 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_9 && (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return))
         {
             printf("\n\n9.memcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -291,7 +291,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         op_return = memmove(tao, sb, pl);
         ftp_return = ft_memmove(taf, sb, pl);
-        if (flag_10 && allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return)
+        if (flag_10 && (allcmp(tao, taf, 512) || tao != op_return || taf != ftp_return))
         {
             printf("\n\n10.memmove error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %p\nftp_return = %p\n", sa, sa, sb, sb, pl, tao, taf, op_return, ftp_return);
             printf("sa\n");
@@ -316,7 +316,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         os_return = strlcpy(tao, sb, pl);
         fts_return = ft_strlcpy(taf, sb, pl);
-        if (flag_11 && allcmp(tao, taf, 512) ||os_return != fts_return)
+        if (flag_11 && (allcmp(tao, taf, 512) ||os_return != fts_return))
         {
             printf("\n\n11.strlcpy error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
@@ -341,7 +341,7 @@ int main(int argc, char *argv[])
         allcpy(taf, sa, 512);
         os_return = strlcat(tao, sb, pl);
         fts_return = ft_strlcat(taf, sb, pl);
-        if (flag_12 && allcmp(tao, taf, 512) ||os_return != fts_return)
+        if (flag_12 && (allcmp(tao, taf, 512) ||os_return != fts_return))
         {
             printf("\n\n12.strlcat error\n\nbefor\n1 = %s(%p)\n2 = %s(%p)\n3 = %d\n\nafter\noriginal_1 = %s\nft_1 = %s\nop_return = %zu\nftp_return = %zu\n", sa, sa, sb, sb, pl, tao, taf, os_return, fts_return);
             printf("sa\n");
